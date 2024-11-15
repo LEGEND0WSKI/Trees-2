@@ -2,7 +2,7 @@
 # // Space Complexity :O(n) for recusive stack space and hashmap
 # // Did this code successfully run on Leetcode :Yes
 # // Any problem you faced while coding this :No
-
+# we need to think right to left, so recursion right will happen before recursion left
 
 # // Your code here along with comments explaining your approach
 
@@ -19,7 +19,7 @@ class Solution:
             idx = inorderIdx[root.val]          # find popped value index in hashmap
 
             
-            root.right = helper(idx+1,end)      # recursion left
+            root.right = helper(idx+1,end)      # recursion right first then
             root.left = helper(start,idx-1)     # recursion left
             return root
 
